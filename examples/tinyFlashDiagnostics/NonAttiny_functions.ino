@@ -188,7 +188,8 @@ void diagnose() {
   getID();
 
   uint16_t _stat;
-  if (prevWritten) {
+  if (prevWritten()) {
+    Serial.println(dataPacket.test, BIN);
     if (dataPacket.test & INT) {
       printHeader(DATA_FUNCTION);
       intDiag();
